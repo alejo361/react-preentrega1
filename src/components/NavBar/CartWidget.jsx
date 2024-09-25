@@ -2,8 +2,7 @@
 const CartWidget = () => {
   return (
     <span className="cartwidget">
-        
-        <ion-icon name="cart" className="bg-gray"></ion-icon>
+        <ion-icon name="cart" className="bg-gray"></ion-icon>1
     </span>
     
   )

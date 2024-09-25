@@ -1,17 +1,18 @@
 import CartWidget from './CartWidget'
 import logo from '../../assets/logo.png'
+//import './NavBar.css'
 
 const NavBar = () => {
     return (
         <nav className="row">
             <header className="row">
                 <div className="col text-center">
-                    <img className="img-responsive" src={logo} width={100}/>
+                    <img className="img-responsive" src={logo} width={100} />
                     <p className="frase">Tu tienda de tecnologia_</p>
                 </div>
             </header>
             <nav className="row m-0 p-0">
-                <div className="col" style={{ backgroundColor:"#22b455" }}>
+                <div className="col" style={{ backgroundColor: "#22b455" }}>
                     <nav className="navbar navbar-nav navbar-expand-lg">
                         <div className="container-fluid">
                             <button className="navbar-toggler" type="button" data-bs-toggle="collapse"
@@ -24,13 +25,22 @@ const NavBar = () => {
                                     <li className="nav-item ">
                                         <a className="nav-link " aria-current="page" href="#">INICIO</a>
                                     </li>
-                                    <li className="nav-item ">
-                                        <a className="nav-link " aria-current="page" href="#">PEDIDO<span
-                                            id="cantProdPedido" className="badge text-bg-secondary"><CartWidget  /> </span></a>
+                                    <li className="nav-item dropdown">
+                                        <a className="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                                            CATEGORIAS
+                                        </a>
+                                        <ul className="dropdown-menu rounded-0" style={{ backgroundColor: "#22b455" }}>
+                                            <li><a className="dropdown-item" href="#">Accesorios</a></li>
+                                            <li><a className="dropdown-item" href="#">Hardware</a></li>
+                                            <li><a className="dropdown-item" href="#">Monitores</a></li>
+                                            <li><a className="dropdown-item" href="#">Celulares</a></li>
+                                            <li><a className="dropdown-item" href="#">Otros</a></li>
+                                        </ul>
                                     </li>
                                     <li className="nav-item ">
-                                        <a className="nav-link " aria-current="page" href="" data-bs-toggle="modal"
-                                            id="loginLink" data-bs-target="#mdLogin">INGRESAR</a>
+                                        <a className="nav-link " aria-current="page" href="#">
+                                            <span className="badge text-bg-secondary"> <CartWidget /> </span>
+                                        </a>
                                     </li>
                                 </ul>
                             </div>
