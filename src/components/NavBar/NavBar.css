@@ -1,0 +1,6 @@
+.frase {
+    text-align: center;
+}
+.dropdown-item a:hover{
+    background-color: blue;
+}

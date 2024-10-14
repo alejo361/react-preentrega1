@@ -1,0 +1,11 @@
+.card-producto {
+    font-weight: bolder;
+    background-color: #204829;
+}
+
+.card-footer {
+    background-color: #22b455;
+}
+#stockProd, .card-producto{
+    color: #22b455;
+}
