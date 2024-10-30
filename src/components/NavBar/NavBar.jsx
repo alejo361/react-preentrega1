@@ -45,9 +45,7 @@ const NavBar = () => {
                                         </ul>
                                     </li>
                                     <li className="nav-item ">
-                                        <a className="nav-link " aria-current="page" href="#">
-                                            <span className="badge text-bg-secondary"> <CartWidget /> </span>
-                                        </a>
+                                        <CartWidget />
                                     </li>
                                 </ul>
                             </div>
