@@ -40,7 +40,6 @@ const ItemListContainer = ({ greeting }) => {
     }
 
     useEffect(() => {
-        console.log(idCategory);
         if(idCategory){
             getProductsByCategory();
             console.log("Filtro por categoria")

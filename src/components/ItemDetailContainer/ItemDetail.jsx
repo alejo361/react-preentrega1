@@ -1,6 +1,7 @@
+import ItemCount from '../ItemCount/ItemCount'
 import React from 'react'
 import { Link } from 'react-router-dom'
-const ItemDetail = ({ product, cargando }) => {
+const ItemDetail = ({ product, addProduct, cargando }) => {
     
     return (
         <div className="itemdetalcontainer container">
@@ -23,6 +24,7 @@ const ItemDetail = ({ product, cargando }) => {
                         </select>
                         <button className="btn btn btn-dark flat btn-comprar rounded-0" type="button">Comprar Ahora</button>
                     </div>
+                    <ItemCount stock={product.stock} addProduct={addProduct}/>
                 </div>
             </div>
 
