@@ -11,7 +11,7 @@ const NavBar = () => {
                     <Link to="/" >
                         <img className="img-responsive" src={logo} width={200} />
                     </Link>
-                    <p className="frase fs-5">Tu tienda de tecnologia_</p>
+                    <p className="frase fs-5">Tu tienda de tecnologia_ </p>
                 </div>
             </header>
             <nav className="row m-0 p-0">
@@ -36,7 +36,6 @@ const NavBar = () => {
                                             <li><Link to="/category/celulares" className="dropdown-item">Celulares</Link></li>
                                             <li><Link to="/category/computadoras" className="dropdown-item">Computadoras</Link></li>
                                             <li><Link to="/category/tablets" className="dropdown-item">Tablets</Link></li>
-                                            <li><Link to="/category/accesorios" className="dropdown-item">Accesorios</Link></li>
                                             <li><Link to="/category/wearables" className="dropdown-item">Wearables</Link></li>
                                             <li><Link to="/category/camaras" className="dropdown-item">Cámaras</Link></li>
                                             <li><Link to="/category/monitores" className="dropdown-item">Monitores</Link></li>

@@ -1,5 +1,4 @@
 import { useState, useEffect } from 'react'
-//import { getProduct } from '../../data/data'
 import { useParams } from 'react-router-dom'
 import ItemDetail from './ItemDetail'
 import React from 'react'
@@ -12,12 +11,12 @@ const ItemDetailContainer = () => {
   const [product, setProduct] = useState({})
   const { idProduct } = useParams();
   const { addProductInCart } = useContext(CartContext)
+  const [hideItemCount, setHideItemCount] = useState(false)
 
   const addProduct = (count) => {
     const productCart = { ...product, quantity: count }
-    //spread + agregar propiedad con valor nueva al obj
-    //console.log(productCart)
     addProductInCart(productCart)
+    setHideItemCount(true) 
   }
 
   const getProduct = () => {
@@ -34,7 +33,7 @@ const ItemDetailContainer = () => {
   }, [])
 
   return (
-    <ItemDetail product={product} addProduct={addProduct} />
+    <ItemDetail product={product} addProduct={addProduct} hideItemCount={hideItemCount} />
   )
 }
 

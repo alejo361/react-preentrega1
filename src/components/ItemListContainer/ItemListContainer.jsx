@@ -3,7 +3,7 @@ import React from 'react'
 import { useParams } from 'react-router-dom';
 import ItemList from './ItemList';
 import "./itemlistcontainer.css";
-import { getProduct } from '../../data/data';
+//import { getProduct } from '../../data/data';
 import { collection, getDocs, query, where } from 'firebase/firestore';
 import db  from "../../db/db.js";
 const ItemListContainer = ({ greeting }) => {
@@ -16,11 +16,9 @@ const ItemListContainer = ({ greeting }) => {
 
         getDocs(collectionName)
             .then((dataDb)=>{
-                //console.log(dataDb)
                 const productsDb = dataDb.docs.map((productDb)=>{
                     return { id: productDb.id, ...productDb.data() } //spread
                 })
-                //console.log(productsDb)
                 setProducts(productsDb)
             })
     }
@@ -42,7 +40,6 @@ const ItemListContainer = ({ greeting }) => {
     useEffect(() => {
         if(idCategory){
             getProductsByCategory();
-            console.log("Filtro por categoria")
         }else{
             getProducts()
         }

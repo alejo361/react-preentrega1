@@ -1,18 +1,10 @@
 import React from 'react'
 import { useState } from 'react'
-//import { useContext } from 'react'
-//import { CartContext } from '../../context/CartContext'
-
 
 const ItemCount = ({ stock, addProduct }) => {
     const [count, setCount] = useState(1)
-    //const { cart, saludo } = useContext(CartContext)
-
-    //console.log(cart)
-
 
     const handleClickDecrement = () => {
-        //saludo()
         if (count > 1) {
             setCount(count - 1)
         }
@@ -22,15 +14,14 @@ const ItemCount = ({ stock, addProduct }) => {
         if (count < stock) {
             setCount(count + 1) //checkear stock para validar
         }
-
     }
 
     return (
         <div>
-            <button onClick={handleClickDecrement}>-</button>
-            <p>{count}</p>
-            <button onClick={handleClickIncrement}>+</button>
-            <button onClick={() => addProduct(count)}>Agregar producto</button>
+            <button onClick={handleClickDecrement} className='btn btn btn-dark flat btn-comprar rounded-0'>-</button>
+            <span className='center m-2'>{count} </span>
+            <button onClick={handleClickIncrement} className='btn btn btn-dark flat btn-comprar rounded-0 '>+</button>
+            <button onClick={() => addProduct(count)} className='btn btn btn-dark flat btn-comprar rounded-0 m-2'>Agregar producto</button>
         </div>
     )
 }

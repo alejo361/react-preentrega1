@@ -7,6 +7,9 @@ import { BrowserRouter, Routes, Route } from "react-router-dom"
 import './App.css'
 import Footer from './components/Footer/Footer'
 import Cart from './components/Cart/Cart'
+import Checkout from './components/Checkout/Checkout'
+import { ToastContainer, toast } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
 
 function App() {
   return (
@@ -14,12 +17,14 @@ function App() {
       <BrowserRouter>
         <CartProvider>
           <NavBar />
+          <ToastContainer theme="colored" position="top-center" />
           <Routes>
             <Route path="/" element={<ItemListContainer greeting={"¡Bienvenido!"} />} />
             <Route path="/category/:idCategory" element={<ItemListContainer greeting={"¡Bienvenido!"} />} />
             <Route path="/detail/:idProduct" element={<ItemDetailContainer />} />
             <Route path="*" element={<NotFound />} />
-            <Route path='/cart' element={<Cart/>}></Route>
+            <Route path="/cart" element={<Cart />} />
+            <Route path="/checkout" element={<Checkout />} />
           </Routes>
           <Footer />
         </CartProvider>

@@ -1,7 +1,8 @@
 import ItemCount from '../ItemCount/ItemCount'
 import React from 'react'
 import { Link } from 'react-router-dom'
-const ItemDetail = ({ product, addProduct, cargando }) => {
+
+const ItemDetail = ({ product, addProduct, cargando , hideItemCount}) => {
     
     return (
         <div className="itemdetalcontainer container">
@@ -16,15 +17,14 @@ const ItemDetail = ({ product, addProduct, cargando }) => {
                     <p>Unidades disponibles: {product.stock}</p>
                     <p className='fs-2 text'>Precio: ${product.price}</p>
                     <div className="input-group w-50">
-                        <select className="form-select rounded-0 w-10 " id="inputGroupSelect04" aria-label="Example select with button addon">
-                            <option value={1} defaultValue={1}>1</option>
-                            <option value={2}>2</option>
-                            <option value={3}>3</option>
-                            <option value={4}>4</option>
-                        </select>
-                        <button className="btn btn btn-dark flat btn-comprar rounded-0" type="button">Comprar Ahora</button>
+                        {
+                            hideItemCount === true ? (
+                                <Link to="/cart" className="btn btn btn-dark flat btn-comprar rounded-0 m-2">Terminar compra</Link>
+                            ):(
+                                <ItemCount stock={product.stock} addProduct={addProduct}/>    
+                            )
+                        }
                     </div>
-                    <ItemCount stock={product.stock} addProduct={addProduct}/>
                 </div>
             </div>
 
